@@ -17,31 +17,10 @@ export default function LocationsList() {
 
     return (
         <section className="grid-view">
-            {locations.map(locations => {
-                return <LocationCard locations={locations} key={locations.id}/>
+            {locations.map(location => {
+                return <LocationCard location={location} key={location.id}/>
             })}
         </section>
     )
     
 }
-
-// const [locations, setLocations ] = useState([]);
-
-//     useEffect(() => {
-//         axios
-//           .get('https://rickandmortyapi.com/api/location/')
-//           .then(result => {
-//             setLocations(result.data.results);
-//             console.log(locations)
-//           })
-//           .catch(error => console.log(error))
-//       }, []);
-
-//     return (
-//         <section className="grid-view">
-//             {locations.map(location => {
-//                 return <LocationCard location={location} key={location.id}/>
-//             })}
-//         </section>
-//     )
-// }
