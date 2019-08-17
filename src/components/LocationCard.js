@@ -4,11 +4,11 @@ import { Card, Icon } from 'semantic-ui-react';
 export default function LocationCard(props) {
   return (
     <Card>
-      <Card.Content header={props.name} />
-      <Card.Content description={`${props.type} - ${props.dimension}`} />
+      <Card.Content header={props.locations.name} />
+      <Card.Content description={`${props.locations.type} - ${props.locations.dimension}`} />
       <Card.Content extra>
         <Icon name='child' />
-        {/* Resudents: {props.residents.length} */}
+        Residents: {props.locations.residents.length}
       </Card.Content>
     </Card>
   )
