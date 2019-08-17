@@ -1,5 +1,7 @@
 import React from "react";
 import { Card, Icon, Image } from 'semantic-ui-react';
+import { Link } from "react-router-dom";
+import EpisodesList from './EpisodesList';
 
 export default function CharacterCard(props) {
   return (
@@ -15,11 +17,19 @@ export default function CharacterCard(props) {
       </Card.Description>
     </Card.Content>
     <Card.Content extra>
-      <a>
-        <Icon name='user' />
-        Episodes: {props.character.episode.length}
-      </a>
+      <Episodes name={props.character.name} episodesNumber={props.character.episode.length}/>
     </Card.Content>
   </Card>
   )
+}
+
+function Episodes(props) {
+
+  const firstName = props.name.split(' ')[0];
+
+  return (
+    <Link to={`/episodes/${firstName}`}>
+      Episodes: {props.episodesNumber}
+    </Link>
+  );
 }
